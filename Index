@@ -475,5 +475,10 @@
             </div>
         </div>
     </footer>
+<a href="7_erros_fatais_implementacao_bim_rbim.pdf" download>
+  <button style="padding: 12px 24px; font-size: 18px; background-color: #0070D7; color: #fff; border: none; border-radius: 8px; cursor: pointer;">
+    Baixar o eBook em PDF
+  </button>
+</a>
 </body>
 </html>

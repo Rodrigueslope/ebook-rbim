@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Erros Fatais na Implementação BIM e Como Evitá-los | RBIM Consultoria</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #0A6973;
+            --secondary-color: #00A896;
+            --accent-color: #F8F9FA;
+            --dark-color: #05386B;
+            --light-color: #EDF5E1;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .gradient-header {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .error-card {
+            border-top: 5px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .error-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .error-number {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+        }
+        
+        .solution-tip {
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .avoid-box {
+            background-color: rgba(0, 168, 150, 0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .consequence-box {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Cover Page -->
+    <header class="gradient-header py-20 px-4 text-white text-center">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-5xl font-bold mb-6">7 ERROS FATAIS</h1>
+            <h2 class="text-3xl font-semibold mb-10">NA IMPLEMENTAÇÃO BIM E COMO EVITÁ-LOS</h2>
+            <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+            <p class="text-xl mb-8">Um guia essencial para profissionais e empresas que desejam implementar a metodologia BIM com sucesso</p>
+            <div class="text-2xl font-bold mt-16">RBIM CONSULTORIA</div>
+            <p class="text-lg">Especialistas em Implantação BIM pelo Brasil</p>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Introdução</h2>
+            <div class="w-16 h-1 bg-teal-500 mx-auto mb-10"></div>
+            
+            <p class="text-lg mb-6">A metodologia BIM (Building Information Modeling) revolucionou o setor da construção civil, prometendo maior eficiência, redução de custos e melhor colaboração entre equipes. No entanto, muitas empresas enfrentam desafios significativos durante a implementação, resultando em projetos fracassados ou com resultados muito abaixo do esperado.</p>
+            
+            <p class="text-lg mb-6">Na RBIM Consultoria, após anos acompanhando implantações BIM bem-sucedidas em diversas empresas pelo Brasil, identificamos padrões claros de erros que comprometem o sucesso desses projetos.</p>
+            
+            <p class="text-lg mb-10">Este e-book apresenta os 7 erros mais fatais que observamos em nossa experiência e, mais importante, compartilha estratégias comprovadas para evitá-los. Seja você um gestor, engenheiro, arquiteto ou profissional técnico envolvido em um processo de implementação BIM, este guia oferece insights valiosos para garantir que sua jornada BIM seja bem-sucedida.</p>
+            
+            <div class="bg-gray-100 p-6 rounded-lg border-l-4 border-blue-600">
+                <p class="text-lg font-semibold text-gray-800 mb-2">Por que este e-book é essencial?</p>
+                <p class="text-gray-700">De acordo com estudos recentes, cerca de <span class="font-semibold">70% das implementações BIM</span> não atingem os objetivos inicialmente estabelecidos. Muitas empresas investem recursos significativos apenas para obterem resultados decepcionantes. Ao conhecer os erros comuns e como evitá-los, você estará preparado para fazer parte do grupo seleto de implementações bem-sucedidas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Errors Section -->
+    <section class="py-16 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-3 text-gray-800">Os 7 Erros Fatais</h2>
+            <p class="text-center text-gray-600 mb-10">E como evitá-los em sua implementação BIM</p>
+            <div class="w-16 h-1 bg-teal-500 mx-auto mb-16"></div>
+
+            <!-- Error 1 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">1</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Falta de Planejamento Estratégico</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">Muitas empresas iniciam a implementação BIM sem um plano estratégico claro, focando apenas na aquisição de software e negligenciando aspectos críticos como processos, pessoas e objetivos de negócio.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Gastos excessivos com licenças sem retorno adequado</li>
+                            <li>Resistência dos colaboradores à adoção</li>
+                            <li>Ausência de métricas para avaliar o sucesso da implementação</li>
+                            <li>Projetos BIM que não atendem às necessidades reais da empresa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Desenvolva um Plano de Execução BIM (BEP) detalhado antes de iniciar a implementação</li>
+                            <li>Estabeleça objetivos claros e mensuráveis para a implementação</li>
+                            <li>Alinhe a estratégia BIM com os objetivos de negócio da empresa</li>
+                            <li>Defina fases graduais de implementação com metas específicas para cada etapa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Recomendamos iniciar com um "Projeto Piloto" bem definido para testar processos e ferramentas antes de expandir para toda a organização. Isso permite ajustes com menor impacto operacional e maior controle sobre os resultados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 2 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">2</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Foco Exclusivo em Software</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">Um erro comum é considerar o BIM apenas como uma nova ferramenta de software, ignorando que se trata de uma metodologia que envolve mudanças em processos, fluxos de trabalho e na cultura organizacional.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Subutilização das ferramentas adquiridas</li>
+                            <li>Processos ineficientes que não aproveitam o potencial BIM</li>
+                            <li>Equipes desalinhadas quanto aos objetivos da implementação</li>
+                            <li>Retorno sobre investimento abaixo do esperado</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Desenvolva um plano que abranja pessoas, processos e tecnologia</li>
+                            <li>Redesenhe fluxos de trabalho para maximizar os benefícios do BIM</li>
+                            <li>Invista em treinamentos que abordem não apenas o software, mas também metodologias e processos</li>
+                            <li>Estude e adapte casos de sucesso do seu setor específico</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Antes de escolher o software, defina claramente seus casos de uso BIM. Um mapeamento detalhado dos processos atuais e dos processos desejados pós-implementação permite identificar as ferramentas realmente necessárias, evitando investimentos desnecessários.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 3 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">3</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Treinamento Inadequado da Equipe</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">Muitas empresas subestimam a importância de um programa de capacitação abrangente, oferecendo apenas treinamentos básicos de software sem considerar as necessidades específicas de cada função e sem acompanhamento contínuo.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Resistência dos colaboradores à adoção das novas ferramentas</li>
+                            <li>Produtividade reduzida durante a transição</li>
+                            <li>Erros recorrentes que comprometem a qualidade dos modelos</li>
+                            <li>Desmotivação da equipe e possível abandono da iniciativa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Desenvolva programas de treinamento personalizados por função e nível de conhecimento</li>
+                            <li>Estabeleça um plano de capacitação continuada, não apenas pontual</li>
+                            <li>Identifique "campeões BIM" internos que possam dar suporte diário à equipe</li>
+                            <li>Implemente sessões práticas com projetos reais da empresa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Crie uma biblioteca de conhecimento interna com tutoriais, templates e soluções para problemas comuns. Complementada com mentorias semanais, essa abordagem acelera a curva de aprendizado e mantém o conhecimento dentro da organização mesmo com eventual rotatividade de pessoal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 4 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">4</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Ausência de Padronização e Protocolos</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">A falta de padrões claros para modelagem, nomenclatura, níveis de detalhamento e processos colaborativos compromete seriamente a qualidade e a utilidade dos modelos BIM desenvolvidos.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Modelos inconsistentes e de difícil utilização</li>
+                            <li>Retrabalho constante para ajustar informações</li>
+                            <li>Dificuldade na colaboração entre diferentes disciplinas</li>
+                            <li>Impossibilidade de extrair dados confiáveis para análises</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Desenvolva um Manual BIM específico para sua empresa</li>
+                            <li>Defina templates padronizados para diferentes tipos de projetos</li>
+                            <li>Estabeleça protocolos claros para colaboração e compartilhamento de informações</li>
+                            <li>Implemente um sistema para validação da qualidade dos modelos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Adote normas nacionais e internacionais como base (como a ABNT NBR 15965 ou ISO 19650), mas adapte-as à realidade e necessidades específicas da sua empresa. Templates bem definidos e bibliotecas de componentes padronizadas reduzem em até 40% o tempo de modelagem nos projetos subsequentes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 5 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">5</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Falta de Apoio da Alta Direção</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">Implementações BIM que não contam com o suporte efetivo e visível da liderança tendem ao fracasso, pois enfrentam resistência interna, falta de recursos adequados e dificuldade para promover as mudanças necessárias.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Orçamento insuficiente para a implementação completa</li>
+                            <li>Falta de autoridade para promover mudanças em processos</li>
+                            <li>Baixa prioridade frente a outras demandas da empresa</li>
+                            <li>Abandono gradual da iniciativa sem atingir resultados</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Apresente um business case completo demonstrando o ROI esperado</li>
+                            <li>Envolva a liderança desde as etapas iniciais do planejamento</li>
+                            <li>Estabeleça reuniões periódicas de acompanhamento com a diretoria</li>
+                            <li>Demonstre resultados rápidos para manter o engajamento</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Prepare uma apresentação com casos reais de sucesso no seu setor, com dados quantitativos de redução de custos, prazo e melhorias de qualidade. Complementando, organize visitas técnicas a empresas que já implementaram o BIM com sucesso para que a liderança visualize concretamente os benefícios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 6 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">6</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Implementação Acelerada e Sem Fases</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">Tentar implementar BIM em toda a empresa simultaneamente, sem estabelecer fases graduais de adoção, costuma resultar em caos operacional, resistência generalizada e abandono da iniciativa.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Sobrecarga das equipes durante a transição</li>
+                            <li>Queda significativa na produtividade</li>
+                            <li>Erros críticos em projetos importantes</li>
+                            <li>Percepção negativa do BIM como uma fonte de problemas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Estabeleça um roadmap de implementação por fases claras</li>
+                            <li>Inicie com projetos piloto de menor complexidade e risco</li>
+                            <li>Defina indicadores de prontidão para avançar entre as fases</li>
+                            <li>Permita tempo de adaptação entre a capacitação e a aplicação completa</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Adote a abordagem BIM Dimensional gradual (3D→4D→5D→6D→7D), priorizando a consolidação de cada dimensão antes de avançar para a próxima. Na nossa experiência, empresas que seguem esta estratégia têm 3x mais chances de alcançar uma implementação bem-sucedida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error 7 -->
+            <div class="error-card bg-white rounded-lg shadow-lg mb-16 overflow-hidden">
+                <div class="p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="error-number mr-4">7</div>
+                        <h3 class="text-2xl font-bold text-gray-800">Negligenciar a Gestão da Mudança</h3>
+                    </div>
+                    
+                    <p class="text-lg mb-6">A implementação BIM representa uma mudança significativa na cultura e nos processos da empresa. Ignorar os aspectos humanos e psicológicos dessa transformação compromete seriamente o sucesso da iniciativa.</p>
+                    
+                    <div class="consequence-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Consequências:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Resistência ativa ou passiva dos colaboradores</li>
+                            <li>Retorno aos métodos antigos de trabalho ao primeiro obstáculo</li>
+                            <li>Ambiente de trabalho negativo e desmotivado</li>
+                            <li>Subutilização das ferramentas implementadas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="avoid-box p-4 rounded mb-6">
+                        <h4 class="font-bold mb-2">Como evitar:</h4>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Desenvolva um plano específico de gestão da mudança</li>
+                            <li>Comunique claramente os benefícios para a empresa e para cada colaborador</li>
+                            <li>Celebre pequenas vitórias ao longo do processo de implementação</li>
+                            <li>Crie um ambiente seguro para o aprendizado, onde erros são vistos como parte do processo</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-tip bg-gray-50 p-4 pl-6 rounded">
+                        <h4 class="font-bold mb-2 text-teal-700"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Dica RBIM:</h4>
+                        <p>Identifique os "formadores de opinião" em cada departamento e invista especialmente em seu treinamento e engajamento. Quando estes profissionais se tornam defensores da metodologia BIM, a aceitação geral aumenta significativamente. Considere também implementar um programa de incentivos para reconhecer avanços na adoção do BIM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Conclusão</h2>
+            <div class="w-16 h-1 bg-teal-500 mx-auto mb-10"></div>
+            
+            <p class="text-lg mb-6">A implementação BIM é uma jornada transformadora que, quando bem conduzida, pode trazer benefícios extraordinários para sua empresa. Ao evitar os sete erros fatais que discutimos neste e-book, você estará posicionando sua organização para uma adoção BIM bem-sucedida.</p>
+            
+            <p class="text-lg mb-6">Lembre-se de que o BIM não é apenas uma tecnologia, mas uma metodologia completa que envolve pessoas, processos e ferramentas. Uma abordagem equilibrada, com planejamento adequado, foco em capacitação e atenção à gestão da mudança, é essencial para colher todos os benefícios que o BIM pode oferecer.</p>
+            
+            <p class="text-lg mb-10">A RBIM Consultoria tem ajudado empresas de diversos portes e segmentos a implementar o BIM com sucesso em todo o Brasil. Nossa metodologia comprovada aborda todos os aspectos críticos discutidos neste e-book, adaptando-se às necessidades específicas de cada organização.</p>
+            
+            <div class="bg-gray-100 p-6 rounded-lg border-l-4 border-green-600 mb-10">
+                <p class="text-xl font-semibold text-gray-800 mb-4">Resultados comprovados de nossos clientes:</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                        <span>Redução média de 30% no tempo de desenvolvimento de projetos</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                        <span>Diminuição de até 70% nas inconsistências entre disciplinas</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                        <span>Economia de 15% a 25% nos custos de construção graças à detecção precoce de interferências</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-600 mt-1 mr-2"></i>
+                        <span>Melhoria significativa na precisão das estimativas de custo e cronograma</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <p class="text-lg italic text-center">"A implementação BIM não é um destino, mas uma jornada contínua de melhoria e inovação."</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-16 px-4 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Pronto para implementar BIM com sucesso?</h2>
+            <p class="text-xl mb-10">A RBIM Consultoria oferece soluções personalizadas para todas as fases da sua jornada BIM.</p>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <i class="fas fa-clipboard-check text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Diagnóstico BIM</h3>
+                    <p>Avaliação completa da maturidade BIM da sua empresa e um roadmap personalizado.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <i class="fas fa-users-cog text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Implementação</h3>
+                    <p>Acompanhamento especializado em todas as etapas da implementação BIM.</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <i class="fas fa-graduation-cap text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Capacitação</h3>
+                    <p>Treinamentos personalizados para diferentes perfis profissionais da sua equipe.</p>
+                </div>
+            </div>
+            
+            <a href="#" class="inline-block bg-white text-blue-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition duration-300">Agende uma Consultoria Gratuita</a>
+            
+            <div class="mt-10 flex justify-center space-x-6">
+                <a href="https://instagram.com/rbimeng" class="text-white hover:text-gray-300">
+                    <i class="fab fa-instagram text-3xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold">RBIM Consultoria</h2>
+                    <p class="text-gray-400">Especialistas em Implementação BIM</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="mb-2">Siga-nos: @rbimeng</p>
+                    <p class="text-gray-400">&copy; 2023 RBIM Consultoria. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
